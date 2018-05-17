@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shadow Output</title>
+  </head>
+  <body>
+    <h1>Shadow Output</h1>
+    <p>the output box below is contained in a shadow tree. Any CSS you add to this page, will not effect it.</p>
+
+    <div class="test">
+      Testing containment of shadow DOM element
+    </div>
+
+    <shadow-output></shadow-output>
+
+    <template id="content_container">
+      <style>
+        div {
+          background-color: #333;
+          color: #fff;
+        }
+
+        .box {
+          border: 10px solid #f09d06;
+        }
+      </style>
+
+      <div class="wrapper">
+        <div class="box">
+          Box content
+        </div>
+      </div>
+    </template>
+
+    <script src="js/libs/webcomponents-hi-sd-ce.js"></script>
+    <script>
+      ShadyCSS.prepareTemplate(document.getElementById('content_container'), 'shadow-output');
+    </script>
+    <script src="js/shadow-output.js"></script>
+  </body>
+</html>
